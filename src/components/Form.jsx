@@ -14,14 +14,16 @@ const Form = () => {
     let [team, setTeam] = useState();
     let [position, setPosition] = useState();
     let [image, setImage] = useState();
+    let [color, setColor] = useState();
+    
     let [listofPlayers, setListofPlayers] = useState([]);
 
 
     const submitHandler = (e) => {
         e.preventDefault();
-        console.log("form has been submitted", player, team, position, image)
+        console.log("form has been submitted", player, team, position, image, color)
 
-        let playerObj = { player, team, position, image };
+        let playerObj = { player, team, position, image, color };
         console.log(playerObj);
 
         setListofPlayers([...listofPlayers, playerObj])
@@ -47,6 +49,11 @@ const Form = () => {
                     <input onChange={(e) => setPosition(e.target.value)} type="text" className="form-control" />
                 </div>
                 <br />
+                <label>Team Color</label>
+                <div className="form-group">
+                    <input onChange={(e) => setColor(e.target.value)} type="text" className="form-control" />
+                </div>
+                <br />
                 <label>Image</label>
                 <div className="form-group">
                     <input onChange={(e) => setImage(e.target.value)} type="text" className="form-control" />
@@ -56,7 +63,19 @@ const Form = () => {
             </form>
             <hr />
             {
+              listofPlayers.map((players,idx)=>{
+                return(
+                    <div className="info" style={{backgroundColor: players.color}}>
+                        <h3>{players.player}</h3>
+                        <p>{players.team}</p>
+                        <p>{players.position}</p>
+                        <p>{players.color}</p>
+                        <img src={players.image} alt="" />
+                    </div>
+                )
+
                 
+              })  
             }
 
         </>

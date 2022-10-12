@@ -17,4 +17,17 @@ button{
   width: 100px;
 }
 
+img{
+  height: 70px;
+  width: 70px;
+  align-items: center;
+}
+
+.info{
+  border: 2px,black,dotted;
+  /* background-color: brown; */
+  height: 200px;
+  width: 900px;
+  align-items: center;
+}
 
