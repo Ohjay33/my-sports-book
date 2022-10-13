@@ -20,14 +20,23 @@ button{
 img{
   height: 70px;
   width: 70px;
-  align-items: center;
+  /* align-items: center; */
+}
+
+
+.parent{
+  display: flex;
+  justify-content:space-between;
+  
 }
 
 .info{
-  border: 2px,black,dotted;
-  /* background-color: brown; */
-  height: 200px;
-  width: 900px;
+  border: 2px solid black;
+  height: 300px;
+  width: 100px;
   align-items: center;
 }
+
+
+
 

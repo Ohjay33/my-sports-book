@@ -15,7 +15,7 @@ const Form = () => {
     let [position, setPosition] = useState();
     let [image, setImage] = useState();
     let [color, setColor] = useState();
-    
+
     let [listofPlayers, setListofPlayers] = useState([]);
 
 
@@ -60,24 +60,30 @@ const Form = () => {
                 </div>
                 <br />
                 <button>Search </button>
-            </form>
-            <hr />
-            {
-              listofPlayers.map((players,idx)=>{
-                return(
-                    <div className="info" style={{backgroundColor: players.color}}>
-                        <h3>{players.player}</h3>
-                        <p>{players.team}</p>
-                        <p>{players.position}</p>
-                        <p>{players.color}</p>
-                        <img src={players.image} alt="" />
-                    </div>
-                )
+                </form>
+                <hr />
+                <div className="parent">
 
-                
-              })  
-            }
+                {
+                    listofPlayers.map((players, idx) => {
+                        return (
+                           
+                                <div className="info" style={{ backgroundColor: players.color }}>
+                                    <h3>{players.player}</h3>
+                                    <p>{players.team}</p>
+                                    <p>{players.position}</p>
+                                    <p>{players.color}</p>
+                                    <img src={players.image} alt="" />
+                                    <button>Delete Player</button>
+                                </div>
+                            
+                        )
 
+
+                    })
+                }
+                </div>
+           
         </>
 
     )
