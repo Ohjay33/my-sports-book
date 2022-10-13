@@ -29,6 +29,11 @@ const Form = () => {
         setListofPlayers([...listofPlayers, playerObj])
     }
 
+    // create a function to delete the players
+    const deletePlayer = (e,idx)=>{
+        console.log("deleting player at id number", idx)
+    }
+
 
     return (
         <>
@@ -68,13 +73,14 @@ const Form = () => {
                     listofPlayers.map((players, idx) => {
                         return (
                            
-                                <div className="info" style={{ backgroundColor: players.color }}>
+                                <div key={idx} className="info" style={{ backgroundColor: players.color }}>
                                     <h3>{players.player}</h3>
+                                    <h4>Players ID {idx}</h4>
                                     <p>{players.team}</p>
                                     <p>{players.position}</p>
                                     <p>{players.color}</p>
                                     <img src={players.image} alt="" />
-                                    <button>Delete Player</button>
+                                    <button onClick={(e)=>deletePlayer(e,idx)}>Delete Player</button>
                                 </div>
                             
                         )

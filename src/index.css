@@ -26,7 +26,7 @@ img{
 
 .parent{
   display: flex;
-  justify-content:space-between;
+  justify-content:center;
   
 }
 
@@ -35,6 +35,7 @@ img{
   height: 300px;
   width: 100px;
   align-items: center;
+  margin: 3px;
 }
 
 
