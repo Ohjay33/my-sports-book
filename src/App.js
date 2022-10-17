@@ -5,7 +5,7 @@ import Form from './components/Form';
 function App() {
   return (
     <div className="App">
-      <h1>My Sports Book</h1>
+      <h1>My Players List</h1>
       <Form></Form>
       {/* make form jjj */}
     </div>
